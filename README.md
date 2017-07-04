@@ -1,2 +1,2 @@
 # Wiegand
-Wiegand implementation on atmega32
+Wiegand implementation on Atmega32
