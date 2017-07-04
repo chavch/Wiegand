@@ -1,6 +1,6 @@
 #define F_CPU 16000000
 #include <avr/io.h>
-#include "c:\users\irakli\Documents\Atmel Studio\7.0\wiegand C\wiegand C\UART.h"
+#include "UART.h"
 #include <avr/interrupt.h>
 #include <util/delay.h>
 
@@ -87,10 +87,9 @@
     PORTD = (1 << 5) | (1 << 6); // PUll-ups Enable
 
     while (1) 
-    {   
-      _delay_ms(1000);
-      printf("Card ID = %ld\t Card HEX = %.x\t Wiegand Type = %d\t\n",CardID, CardID, bit_count);
-      _delay_ms(500);
+    { 
+      if(bitcount >= 4)
+        printf("Card ID = %l\t Card HEX = %.x\t Wiegand Type = %d\t\n",CardID, CardID, bit_count);
 
       Send_Data();
 
